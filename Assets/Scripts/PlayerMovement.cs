@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
     private const string ISWALKING_ANIM_PARAMETER = "isWalking";
 
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpForce = 2f;
     [SerializeField] private Transform gfxTransform;
     [SerializeField] private Animator animator;
+
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce = 2f;
+    [SerializeField] private float groundCheckRadius = 2f;
+    [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody rb;
 
@@ -24,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
         if (movementInput.x != 0 || movementInput.y != 0)
         {
@@ -45,6 +54,16 @@ public class PlayerMovement : MonoBehaviour
 
         float rotateSpeed = 10f;
         gfxTransform.forward = Vector3.Slerp(gfxTransform.forward, moveDir, Time.deltaTime * rotateSpeed);
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
     }
 
     private void UpdateAnimations()

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pink Zig Zag Tree
+  m_Controller: {fileID: 9100000, guid: 5aae4608b4b74b244b7ef317311260c8, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -9016368074543072396, guid: 7e7eb9a35429d3a42ad9541264b2d84b,
+      type: 3}
+    m_OverrideClip: {fileID: 1426689352189048854, guid: 9523c52b80cb50b4e9f3e1be63889cc6,
+      type: 3}
+  - m_OriginalClip: {fileID: -1613615198727717176, guid: 7e7eb9a35429d3a42ad9541264b2d84b,
+      type: 3}
+    m_OverrideClip: {fileID: 3790524663059365243, guid: 9523c52b80cb50b4e9f3e1be63889cc6,
+      type: 3}

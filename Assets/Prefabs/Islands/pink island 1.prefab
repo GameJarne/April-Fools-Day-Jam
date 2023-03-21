@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321836766}
   - component: {fileID: 1321836767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 3001366328532918260}
   - component: {fileID: 6055966924745671674}
   - component: {fileID: 3985900990182942856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pink island 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

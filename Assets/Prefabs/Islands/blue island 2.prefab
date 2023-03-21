@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058718929}
   - component: {fileID: 2058718930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 7912964394787084405}
   - component: {fileID: 8187297194340907693}
   - component: {fileID: 887498068698236935}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: blue island 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296896820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gold drop location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534698792}
   - component: {fileID: 534698793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 233969879883343896}
-  m_Layer: 0
+  - component: {fileID: 2320293346977175435}
+  - component: {fileID: 2298784688921029678}
+  m_Layer: 6
   m_Name: pinkzigzagtree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +120,40 @@ Transform:
   - {fileID: 296896820}
   - {fileID: 534698792}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2320293346977175435
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609370170949251746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 829cba92e2bdf0d4096eec0ef7e5c743, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2298784688921029678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609370170949251746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aec57f940d13d48965121bff553a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1154359600904016901
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5987002515654592529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3473640104476236211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9024151338394222243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4755955123538663426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7235488018920256044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1015146886942873739}
   - component: {fileID: 5378653528694994367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5286572762450445894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leaves_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

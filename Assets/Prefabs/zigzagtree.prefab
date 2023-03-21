@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552100352}
   - component: {fileID: 552100353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 836545941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gold drop location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,8 @@ GameObject:
   m_Component:
   - component: {fileID: 939128894357262241}
   - component: {fileID: 757393901345908814}
-  m_Layer: 0
+  - component: {fileID: 6992413793197002460}
+  m_Layer: 6
   m_Name: zigzagtree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +120,7 @@ Transform:
   - {fileID: 836545941}
   - {fileID: 552100352}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &757393901345908814
 Animator:
@@ -141,6 +142,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6992413793197002460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451385173188547867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aec57f940d13d48965121bff553a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3264164553757117401
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679914013476030953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leaves_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2943640886526061808}
   - component: {fileID: 4717532290123341372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2783622812467518801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777002057009885846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8140924674997828127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701106344377089160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: trunk 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8194477170518892351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
