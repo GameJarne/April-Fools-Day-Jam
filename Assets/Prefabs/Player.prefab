@@ -576,7 +576,7 @@ MonoBehaviour:
   gfxTransform: {fileID: 5238711953191426123}
   animator: {fileID: 5238711953191426120}
   jumpForce: 10
-  groundCheckRadius: 2
+  groundCheckRadius: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -633,7 +633,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7029145678433361493}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8e8e86a03f246764d9822376e6e102db, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

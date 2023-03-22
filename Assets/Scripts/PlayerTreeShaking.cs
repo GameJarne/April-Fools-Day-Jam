@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerTreeShaking : MonoBehaviour
 {
     [SerializeField] private float checkDistance = 1.0f;
-    [SerializeField] private float checkRadius = 2.0f;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform gfxTransform;
 
@@ -35,6 +34,6 @@ public class PlayerTreeShaking : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, gfxTransform.forward);
 
-        return Physics.SphereCast(ray, checkRadius, out hitInfo, checkDistance, interactableLayer);
+        return Physics.Raycast(ray, out hitInfo, checkDistance, interactableLayer);
     }
 }

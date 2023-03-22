@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movementInput;
     private bool isMoving;
+    private bool isJumping = false;
+    private float timeSinceJumped = 0f;
 
     private void Awake()
     {
@@ -28,6 +30,17 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (isJumping)
+        {
+            timeSinceJumped += Time.deltaTime;
+        }
+
+        if (IsGrounded() && timeSinceJumped >= 0.1f && isJumping)
+        {
+            isJumping = false;
+            animator.SetBool("isJumping", false);
+        }
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
@@ -41,6 +54,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+
+        /* if (isJumping)
+        {
+            Ray ray = new Ray(transform.position, -transform.up);
+
+            isJumping = Physics.Raycast(ray, 0.5f, groundLayer);
+            
+            animator.SetBool("isJumping", isJumping);
+        } */
 
         UpdateAnimations();
     }
@@ -58,6 +80,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        timeSinceJumped = 0f;
+        isJumping = true;
+        animator.SetBool("isJumping", isJumping);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
@@ -68,13 +93,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        if (isMoving)
+        if (!isJumping)
         {
-            animator.SetBool(ISWALKING_ANIM_PARAMETER, true);
-        }
-        else
-        {
-            animator.SetBool(ISWALKING_ANIM_PARAMETER, false);
+            if (isMoving)
+            {
+                animator.SetBool(ISWALKING_ANIM_PARAMETER, true);
+            }
+            else
+            {
+                animator.SetBool(ISWALKING_ANIM_PARAMETER, false);
+            }
         }
     }
 }
