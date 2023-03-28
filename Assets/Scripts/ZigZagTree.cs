@@ -8,6 +8,8 @@ public class ZigZagTree : MonoBehaviour, Interactable
 
     [SerializeField] private Transform goldSpawnLocation;
     [SerializeField] private Transform goldNuggetPrefab;
+    [SerializeField] private int maxGoldNuggets = 3;
+    private int goldNuggetsDropped = 0;
     private Animator animator;
 
     [HideInInspector] public bool allowShaking = true;
@@ -17,12 +19,23 @@ public class ZigZagTree : MonoBehaviour, Interactable
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        goldNuggetsDropped = 0;
+    }
+
     public void OnInteract()
     {
         if (allowShaking)
         {
             animator.Play(SHAKING_ANIM_NAME);
-            SpawnGoldNugget();
+
+            if (goldNuggetsDropped < maxGoldNuggets)
+            {
+                goldNuggetsDropped++;
+                SpawnGoldNugget();
+            }
+
             allowShaking = false;
             StartCoroutine(ResetAllowShaking());
         }
