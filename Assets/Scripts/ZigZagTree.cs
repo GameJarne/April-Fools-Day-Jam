@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ZigZagTree : MonoBehaviour, Interactable
 {
     private const string SHAKING_ANIM_NAME = "Shaking";
 
-    [SerializeField] private Transform goldSpawnLocation;
+    [SerializeField] private Transform[] goldSpawnLocations;
     [SerializeField] private Transform goldNuggetPrefab;
     [SerializeField] private int maxGoldNuggets = 3;
     private int goldNuggetsDropped = 0;
@@ -50,6 +51,12 @@ public class ZigZagTree : MonoBehaviour, Interactable
     void SpawnGoldNugget()
     {
         Transform goldNugget = Instantiate(goldNuggetPrefab);
+        Transform goldSpawnLocation = GetGoldNuggetSpawnLocTransform();
         goldNugget.transform.SetLocalPositionAndRotation(goldSpawnLocation.position, goldSpawnLocation.rotation);
+    }
+
+    Transform GetGoldNuggetSpawnLocTransform()
+    {
+        return goldSpawnLocations[Random.Range(0, goldSpawnLocations.Length)];
     }
 }
