@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3367688890632869982}
   - component: {fileID: 5879311064903864279}
   - component: {fileID: 3628134872115452754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: golden nugget
-  m_TagString: Untagged
+  m_TagString: Gold Nugget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
