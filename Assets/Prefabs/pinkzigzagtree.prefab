@@ -126,7 +126,6 @@ MonoBehaviour:
   goldSpawnLocations:
   - {fileID: 8391096673694694241}
   - {fileID: 6861077074419816971}
-  - {fileID: 1904396438485502460}
   goldNuggetPrefab: {fileID: 4537169816064910129, guid: 2ffaeba7dd21a074e88d1ed179979d4d,
     type: 3}
   maxGoldNuggets: 3
@@ -352,7 +351,6 @@ Transform:
   m_Children:
   - {fileID: 8391096673694694241}
   - {fileID: 6861077074419816971}
-  - {fileID: 1904396438485502460}
   m_Father: {fileID: 233969879883343896}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -506,36 +504,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7235488018920256044}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8828521193494015496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1904396438485502460}
-  m_Layer: 6
-  m_Name: gold drop location 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1904396438485502460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828521193494015496}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.02, y: 8.129, z: 3.305}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6602882722322439396}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
