@@ -154,6 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89aec57f940d13d48965121bff553a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldSpawnLocation: {fileID: 836545941}
+  goldNuggetPrefab: {fileID: 4537169816064910129, guid: 2ffaeba7dd21a074e88d1ed179979d4d,
+    type: 3}
+  allowShaking: 1
 --- !u!1 &3264164553757117401
 GameObject:
   m_ObjectHideFlags: 0

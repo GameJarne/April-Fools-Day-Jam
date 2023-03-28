@@ -580,6 +580,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  startJumpAnim: {fileID: -8165901650649769206, guid: 734ea77664657da4f977354ff6025457,
+    type: 3}
 --- !u!114 &8856867012267207251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +595,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkDistance: 1
-  checkRadius: 1
   interactableLayer:
     serializedVersion: 2
     m_Bits: 64

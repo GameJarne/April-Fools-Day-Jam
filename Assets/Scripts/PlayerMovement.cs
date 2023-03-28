@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 2f;
     [SerializeField] private float groundCheckRadius = 2f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private AnimationClip startJumpAnim;
 
     private Rigidbody rb;
 
@@ -31,21 +32,23 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (isJumping)
-        {
-            timeSinceJumped += Time.deltaTime;
-        }
-
-        if (IsGrounded() && timeSinceJumped >= 0.1f && isJumping)
-        {
-            isJumping = false;
-            animator.SetBool("isJumping", false);
-        }
-
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
+
+        if (isJumping)
+        {
+            timeSinceJumped += Time.deltaTime;
+
+            if (timeSinceJumped >= startJumpAnim.length)
+            {
+                isJumping = false;
+                animator.SetBool("isJumping", false);
+            }
+        }
+        else
+            animator.SetBool("inAir", !IsGrounded());
 
         if (movementInput.x != 0 || movementInput.y != 0)
         {
@@ -54,15 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
-
-        /* if (isJumping)
-        {
-            Ray ray = new Ray(transform.position, -transform.up);
-
-            isJumping = Physics.Raycast(ray, 0.5f, groundLayer);
-            
-            animator.SetBool("isJumping", isJumping);
-        } */
 
         UpdateAnimations();
     }

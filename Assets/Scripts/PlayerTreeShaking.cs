@@ -21,6 +21,10 @@ public class PlayerTreeShaking : MonoBehaviour
     private void Update()
     {
         bool canShakeTree = CanShakeTree();
+        if (canShakeTree)
+        {
+            canShakeTree = hitInfo.transform.parent.GetComponent<ZigZagTree>().allowShaking;
+        }
 
         eButtonIndicator.SetActive(canShakeTree);
 
