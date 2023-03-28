@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AnimationClip startJumpAnim;
 
     private Rigidbody rb;
+    private PlayerInput playerInput;
 
     private Vector2 movementInput;
     private bool isMoving;
@@ -26,16 +28,25 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void Start()
+    {
+        playerInput.OnJumpAction += PlayerInput_OnJumpAction;
+    }
+
+    private void PlayerInput_OnJumpAction(object sender, System.EventArgs e)
+    {
+        if (IsGrounded())
+        {
+            Jump();
+        }
     }
 
     private void Update()
     {
-        movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+        movementInput = playerInput.GetMovementVectorNormalized();
 
         if (isJumping)
         {
