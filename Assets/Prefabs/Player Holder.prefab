@@ -667,7 +667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4186212389008455279}
-  m_LocalRotation: {x: 0.37223783, y: -0.000000015969887, z: 0.0000000064048655, w: 0.9281374}
+  m_LocalRotation: {x: 0.37223783, y: 0.000000015969887, z: -0.0000000064048655, w: 0.9281374}
   m_LocalPosition: {x: -1.2367, y: 11.438999, z: -14.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -863,7 +863,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3ffec8d80dc4db94f8069191ba7c1636, type: 2}
+  - {fileID: 2100000, guid: bcfdc6694f16f114f9a6ce7eb405ae61, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -888,7 +888,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -5495902117074765545, guid: 957e6d97b1f2a0440a234a8b13491b0e, type: 3}
+  m_Mesh: {fileID: -5495902117074765545, guid: 734ea77664657da4f977354ff6025457, type: 3}
   m_Bones:
   - {fileID: 4186212390994878438}
   - {fileID: 4186212390224277358}
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  startJumpAnim: {fileID: -8165901650649769206, guid: 957e6d97b1f2a0440a234a8b13491b0e,
+  startJumpAnim: {fileID: -8165901650649769206, guid: 734ea77664657da4f977354ff6025457,
     type: 3}
 --- !u!114 &2413096669501567824
 MonoBehaviour:
@@ -2263,7 +2263,7 @@ Animator:
   m_GameObject: {fileID: 4186212390829484791}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec613aec8c0fea64bb0d7074b081dfed, type: 2}
+  m_Controller: {fileID: 9100000, guid: 04c9a7991ae7e96449244def4b38b829, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2673,9 +2673,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Gold: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b469e3e7fdb40274692455b83218eccb, type: 2}
-  m_sharedMaterial: {fileID: -3501774092590737661, guid: b469e3e7fdb40274692455b83218eccb,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3274,7 +3273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cace8c77b2a14f540b33563353b51618, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ed351d4caf1b8a4e8669f7dbacee131, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
