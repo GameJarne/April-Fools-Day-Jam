@@ -1,18 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPauseGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject pauseMenu;
+
+    private PlayerInput playerInput;
+    private bool isPaused = false;
+
+    private void Awake()
     {
-        
+        playerInput = GetComponent<PlayerInput>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        playerInput.OnPauseButton += PlayerInput_OnPauseButton;
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+
+        isPaused = false;
+    }
+
+    private void PlayerInput_OnPauseButton(object sender, System.EventArgs e) // when the player pressed the pause key
+    {
+        TogglePauseGame();
+    }
+
+    private void TogglePauseGame()
+    {
+        if (isPaused) // is paused
+        {
+            Time.timeScale = 1f;
+        }
+        else // is not paused
+        {
+            Time.timeScale = 0f;
+        }
+
+        pauseMenu.SetActive(!isPaused);
+        isPaused = !isPaused;
+    }
+
+    public void ResumeGame()
+    {
+        TogglePauseGame();
+    }
+
+    public void ExitToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }

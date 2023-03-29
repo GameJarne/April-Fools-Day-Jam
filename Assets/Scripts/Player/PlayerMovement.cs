@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private float timeSinceJumped = 0f;
 
+    private bool isGrounded;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -58,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerInput_OnJumpAction(object sender, System.EventArgs e)
     {
-        if (IsGrounded())
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
+        if (isGrounded)
         {
             Jump();
         }
@@ -66,8 +69,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
+
         movementInput = playerInput.GetMovementVectorNormalized();
-        currentSpeed = (isSprinting && IsGrounded()) ? runSpeed : walkSpeed;
+        currentSpeed = (isSprinting && isGrounded) ? runSpeed : walkSpeed;
 
         if (isJumping)
         {
@@ -80,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         else
-            animator.SetBool("inAir", !IsGrounded());
+            animator.SetBool("inAir", !isGrounded);
 
         if (movementInput.x != 0 || movementInput.y != 0)
         {
@@ -110,11 +115,6 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
         animator.SetBool("isJumping", isJumping);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-    }
-
-    private bool IsGrounded()
-    {
-        return Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
     }
 
     private void UpdateAnimations()

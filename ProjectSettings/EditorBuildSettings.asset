@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 8b4a73c84bcabec4c990df003b3ca81b
   - enabled: 1
-    path: Assets/Scenes/Testing Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Levels/Tutorial Level.unity
+    guid: 086f537860bf9094093d84f605b5c92b
   m_configObjects: {}

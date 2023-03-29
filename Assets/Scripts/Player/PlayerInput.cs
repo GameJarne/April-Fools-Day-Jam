@@ -6,8 +6,11 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public event EventHandler OnJumpAction;
+
     public event EventHandler OnSprintPerformed;
     public event EventHandler OnSprintCanceled;
+
+    public event EventHandler OnPauseButton;
 
     private PlayerInputActions playerInputActions;
 
@@ -20,6 +23,13 @@ public class PlayerInput : MonoBehaviour
 
         playerInputActions.Player.Sprint.performed += Sprint_performed;
         playerInputActions.Player.Sprint.canceled += Sprint_canceled;
+
+        playerInputActions.Player.Pause.performed += Pause_performed;
+    }
+
+    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnPauseButton?.Invoke(this, EventArgs.Empty);
     }
 
     private void Sprint_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
