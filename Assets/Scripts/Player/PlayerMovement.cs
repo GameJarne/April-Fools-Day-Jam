@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private const string ISWALKING_ANIM_PARAMETER = "isWalking";
 
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float runSpeed = 7f;
     [SerializeField] private Transform gfxTransform;
     [SerializeField] private Animator animator;
 
@@ -20,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private PlayerInput playerInput;
 
+    private float currentSpeed;
     private Vector2 movementInput;
+
     private bool isMoving;
     private bool isJumping = false;
     private float timeSinceJumped = 0f;
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerInput.OnJumpAction += PlayerInput_OnJumpAction;
+        currentSpeed = walkSpeed;
     }
 
     private void PlayerInput_OnJumpAction(object sender, System.EventArgs e)
@@ -47,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = playerInput.GetMovementVectorNormalized();
+        currentSpeed = (Input.GetKey(KeyCode.LeftShift) && IsGrounded()) ? runSpeed : walkSpeed;
 
         if (isJumping)
         {
@@ -76,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveDir = new Vector3(movementInput.x, 0f, movementInput.y);
 
-        Vector3 moveVector = moveDir * speed * 10f * Time.deltaTime;
+        Vector3 moveVector = moveDir * currentSpeed * 10f * Time.deltaTime;
         rb.velocity = new Vector3(moveVector.x, rb.velocity.y, moveVector.z);
 
         float rotateSpeed = 10f;
