@@ -715,7 +715,7 @@ MonoBehaviour:
   gfxTransform: {fileID: 5238711953191426123}
   animator: {fileID: 5238711953191426120}
   jumpForce: 10
-  groundCheckRadius: 0.1
+  groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
