@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private PlayerInput playerInput;
 
+    private bool isSprinting;
     private float currentSpeed;
     private Vector2 movementInput;
 
@@ -37,8 +38,23 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerInput.OnJumpAction += PlayerInput_OnJumpAction;
+
+        playerInput.OnSprintPerformed += PlayerInput_OnSprintPerformed;
+        playerInput.OnSprintCanceled += PlayerInput_OnSprintCanceled;
+
         currentSpeed = walkSpeed;
+        isSprinting = false;
     }
+
+    private void PlayerInput_OnSprintPerformed(object sender, System.EventArgs e)
+    {
+        isSprinting = true;
+    }
+    private void PlayerInput_OnSprintCanceled(object sender, System.EventArgs e)
+    {
+        isSprinting = false;
+    }
+
 
     private void PlayerInput_OnJumpAction(object sender, System.EventArgs e)
     {
@@ -51,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementInput = playerInput.GetMovementVectorNormalized();
-        currentSpeed = (Input.GetKey(KeyCode.LeftShift) && IsGrounded()) ? runSpeed : walkSpeed;
+        currentSpeed = (isSprinting && IsGrounded()) ? runSpeed : walkSpeed;
 
         if (isJumping)
         {
