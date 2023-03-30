@@ -11,6 +11,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
         mainPanel.SetActive(true);
         settingsPanel.SetActive(false);
         levelsPanel.SetActive(false);

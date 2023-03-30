@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Gold Nugget
   - ZigZagTree
+  - Instant Death
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Instant Death
+  - 
   - Water
   - UI
   - Interactable

@@ -52,7 +52,6 @@ public class PlayerPauseGame : MonoBehaviour
 
     public void ExitToMenu()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }

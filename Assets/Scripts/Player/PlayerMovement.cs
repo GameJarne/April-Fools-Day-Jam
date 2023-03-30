@@ -18,8 +18,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private AnimationClip startJumpAnim;
 
+    private bool allowMoving = true;
+
     private Rigidbody rb;
     private PlayerInput playerInput;
+    private PlayerHealth playerHealth;
 
     private bool isSprinting;
     private float currentSpeed;
@@ -35,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     private void Start()
@@ -44,8 +48,19 @@ public class PlayerMovement : MonoBehaviour
         playerInput.OnSprintPerformed.AddListener(OnSprintKeyDown);
         playerInput.OnSprintCanceled.AddListener(OnSprintKeyUp);
 
+        playerHealth.onDeath.AddListener(Die);
+
         currentSpeed = walkSpeed;
         isSprinting = false;
+
+        allowMoving = true;
+    }
+
+    private void Die()
+    {
+        allowMoving = false;
+
+        this.enabled = false;
     }
 
     private void OnSprintKeyDown()
@@ -60,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJumpAction()
     {
+        if (!allowMoving)
+            return;
+
         isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
         if (isGrounded)
         {
@@ -68,7 +86,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-    {        
+    {
+        if (!allowMoving)
+            return;
+
         isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer); ;
 
         movementInput = playerInput.GetMovementVectorNormalized();
@@ -100,6 +121,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!allowMoving)
+            return;
+
         Vector3 moveDir = new Vector3(movementInput.x, 0f, movementInput.y);
 
         Vector3 moveVector = moveDir * currentSpeed * 10f * Time.deltaTime;
