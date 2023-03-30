@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 534698792}
   - component: {fileID: 534698793}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: collision
-  m_TagString: Untagged
+  m_TagString: ZigZagTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 2298784688921029678}
   m_Layer: 6
   m_Name: pinkzigzagtree
-  m_TagString: Untagged
+  m_TagString: ZigZagTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ Transform:
   - {fileID: 6602882722322439396}
   - {fileID: 534698792}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2320293346977175435
 Animator:

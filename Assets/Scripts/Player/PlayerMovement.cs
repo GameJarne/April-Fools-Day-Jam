@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-    {
-        isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
+    {        
+        isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer); ;
 
         movementInput = playerInput.GetMovementVectorNormalized();
         currentSpeed = (isSprinting && isGrounded) ? runSpeed : walkSpeed;

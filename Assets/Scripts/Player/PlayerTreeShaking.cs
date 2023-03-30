@@ -36,8 +36,16 @@ public class PlayerTreeShaking : MonoBehaviour
 
     private bool CanShakeTree()
     {
-        Ray ray = new Ray(transform.position, gfxTransform.forward);
+        Ray ray = new Ray(transform.position + (Vector3.up * 0.3f), gfxTransform.forward);
 
-        return Physics.Raycast(ray, out hitInfo, checkDistance, interactableLayer);
+        if (Physics.Raycast(ray, out hitInfo, checkDistance))
+        {
+            if (hitInfo.transform.gameObject.layer == interactableLayer ||
+                    hitInfo.transform.gameObject.CompareTag("ZigZagTree"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

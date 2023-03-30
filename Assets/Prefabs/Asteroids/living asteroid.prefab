@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1828619859065729390}
+  - component: {fileID: 7725665562549413772}
   m_Layer: 7
   m_Name: Living Asteroid
   m_TagString: Untagged
@@ -32,6 +33,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7725665562549413772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828619859065729389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b76dfc7e4e7d7438fd0ef9db3127de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  startFollowingDistance: 5
+  followDistance: 10
+  hoverAmount: 0.1
+  idleHeight: 5
+  followHeight: 1
+  avoidDistance: 5
+  disguisedMesh: {fileID: -7445099610986950344, guid: cdd658590936f9e4cbff3adcad322227,
+    type: 3}
+  meshFilter: {fileID: 8557859977176207018}
 --- !u!1 &3798872949917511091
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,9 +184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b76dfc7e4e7d7438fd0ef9db3127de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  startFollowingDistance: 2
+  followDistance: 10
+  hoverAmount: 0.1
+  idleHeight: 5
+  followHeight: 1
+  avoidDistance: 2
   disguisedMesh: {fileID: -7445099610986950344, guid: cdd658590936f9e4cbff3adcad322227,
-    type: 3}
-  normalMesh: {fileID: 3880789721070229047, guid: cdd658590936f9e4cbff3adcad322227,
     type: 3}
   meshFilter: {fileID: 8557859977176207018}
 --- !u!64 &6048960123745361755
