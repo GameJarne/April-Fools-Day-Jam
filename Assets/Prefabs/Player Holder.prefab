@@ -1995,6 +1995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4186212390567691945}
   - component: {fileID: 4186212390567691944}
+  - component: {fileID: 4036015767607886934}
   - component: {fileID: 2413096669501567824}
   - component: {fileID: 8620843066812677922}
   - component: {fileID: 8186171372095739961}
@@ -2049,6 +2050,22 @@ MonoBehaviour:
     m_Bits: 128
   startJumpAnim: {fileID: -8165901650649769206, guid: 734ea77664657da4f977354ff6025457,
     type: 3}
+--- !u!114 &4036015767607886934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186212390567692118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3f2a340d2e5d54da35730bb352f991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartTime: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2413096669501567824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2105,6 +2122,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c5e16c6fccdf4b95c82a4984faf7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnJumpAction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSprintPerformed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSprintCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPauseButton:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &4186212390567691946
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Player has died.");
             onDeath?.Invoke();
+            StartCoroutine(RestartAfterTime());
         }
     }
 
