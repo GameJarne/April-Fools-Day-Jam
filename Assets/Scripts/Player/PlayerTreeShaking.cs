@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerTreeShaking : MonoBehaviour
 {
@@ -10,8 +11,14 @@ public class PlayerTreeShaking : MonoBehaviour
     [SerializeField] private Transform gfxTransform;
 
     [SerializeField] private GameObject eButtonIndicator;
+    private Image eButtonIndicatorImage;
 
     private RaycastHit hitInfo;
+
+    private void Awake()
+    {
+        eButtonIndicatorImage = eButtonIndicator.GetComponent<Image>();
+    }
 
     private void Start()
     {
@@ -24,9 +31,24 @@ public class PlayerTreeShaking : MonoBehaviour
         if (canShakeTree)
         {
             canShakeTree = hitInfo.transform.parent.GetComponent<ZigZagTree>().allowShaking;
+
+            if (canShakeTree)
+            {
+                eButtonIndicatorImage.color = ChangeColorAlpha(eButtonIndicatorImage.color, 1f);
+            } else
+            {
+                eButtonIndicatorImage.color = ChangeColorAlpha(eButtonIndicatorImage.color, 0.5f);
+            }
+
+            eButtonIndicator.SetActive(true);
+        }
+        else
+        {
+            eButtonIndicator.SetActive(false);
+            eButtonIndicatorImage.color = ChangeColorAlpha(eButtonIndicatorImage.color, 1f);
         }
 
-        eButtonIndicator.SetActive(canShakeTree);
+        
 
         if (Input.GetKeyDown(KeyCode.E) && canShakeTree)
         {
@@ -47,5 +69,11 @@ public class PlayerTreeShaking : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private Color ChangeColorAlpha(Color originalColor, float alpha)
+    {
+        originalColor.a = alpha;
+        return originalColor;
     }
 }
