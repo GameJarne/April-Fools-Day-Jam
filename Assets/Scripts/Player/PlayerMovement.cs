@@ -39,26 +39,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        playerInput.OnJumpAction += PlayerInput_OnJumpAction;
+        playerInput.OnJumpAction.AddListener(OnJumpAction);
 
-        playerInput.OnSprintPerformed += PlayerInput_OnSprintPerformed;
-        playerInput.OnSprintCanceled += PlayerInput_OnSprintCanceled;
+        playerInput.OnSprintPerformed.AddListener(OnSprintKeyDown);
+        playerInput.OnSprintCanceled.AddListener(OnSprintKeyUp);
 
         currentSpeed = walkSpeed;
         isSprinting = false;
     }
 
-    private void PlayerInput_OnSprintPerformed(object sender, System.EventArgs e)
+    private void OnSprintKeyDown()
     {
         isSprinting = true;
     }
-    private void PlayerInput_OnSprintCanceled(object sender, System.EventArgs e)
+    private void OnSprintKeyUp()
     {
         isSprinting = false;
     }
 
 
-    private void PlayerInput_OnJumpAction(object sender, System.EventArgs e)
+    private void OnJumpAction()
     {
         isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
         if (isGrounded)

@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
-    public event EventHandler OnJumpAction;
+    public UnityEvent OnJumpAction;
 
-    public event EventHandler OnSprintPerformed;
-    public event EventHandler OnSprintCanceled;
+    public UnityEvent OnSprintPerformed;
+    public UnityEvent OnSprintCanceled;
 
-    public event EventHandler OnPauseButton;
+    public UnityEvent OnPauseButton;
 
     private PlayerInputActions playerInputActions;
 
@@ -29,22 +30,22 @@ public class PlayerInput : MonoBehaviour
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnPauseButton?.Invoke(this, EventArgs.Empty);
+        OnPauseButton?.Invoke();
     }
 
     private void Sprint_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnSprintCanceled?.Invoke(this, EventArgs.Empty);
+        OnSprintCanceled?.Invoke();
     }
 
     private void Sprint_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnSprintPerformed?.Invoke(this, EventArgs.Empty);
+        OnSprintPerformed?.Invoke();
     }
 
     private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        OnJumpAction?.Invoke(this, EventArgs.Empty);
+        OnJumpAction?.Invoke();
     }
 
     public Vector2 GetMovementVectorNormalized()

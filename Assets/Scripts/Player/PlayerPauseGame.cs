@@ -17,7 +17,7 @@ public class PlayerPauseGame : MonoBehaviour
 
     private void Start()
     {
-        playerInput.OnPauseButton += PlayerInput_OnPauseButton;
+        playerInput.OnPauseButton.AddListener(OnPauseKeyPressed);
 
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -25,7 +25,7 @@ public class PlayerPauseGame : MonoBehaviour
         isPaused = false;
     }
 
-    private void PlayerInput_OnPauseButton(object sender, System.EventArgs e) // when the player pressed the pause key
+    private void OnPauseKeyPressed() // when the player pressed the pause key
     {
         TogglePauseGame();
     }

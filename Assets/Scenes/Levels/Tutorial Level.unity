@@ -963,8 +963,9 @@ GameObject:
   - component: {fileID: 1380688043}
   - component: {fileID: 1380688042}
   - component: {fileID: 1380688041}
-  m_Layer: 7
-  m_Name: Plane
+  - component: {fileID: 1380688045}
+  m_Layer: 3
+  m_Name: Death Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +988,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -999,7 +1000,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380688040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1050,13 +1051,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380688040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.44, y: 0, z: -7.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -50, z: 0}
+  m_LocalScale: {x: 24.18, y: 24.18, z: 24.18}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1380688045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380688040}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.999999, y: 2.2204459e-16, z: 9.999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494893959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2139,22 +2161,22 @@ PrefabInstance:
     - target: {fileID: 4186212389008455266, guid: 990e7f83ae7cc2a4abc494e14b3b607c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015969887
+      value: 0.000000015969887
       objectReference: {fileID: 0}
     - target: {fileID: 4186212389008455266, guid: 990e7f83ae7cc2a4abc494e14b3b607c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000064048655
+      value: -0.0000000064048655
       objectReference: {fileID: 0}
     - target: {fileID: 4186212389440665628, guid: 990e7f83ae7cc2a4abc494e14b3b607c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015969887
+      value: 0.000000015969887
       objectReference: {fileID: 0}
     - target: {fileID: 4186212389440665628, guid: 990e7f83ae7cc2a4abc494e14b3b607c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000064048655
+      value: -0.0000000064048655
       objectReference: {fileID: 0}
     - target: {fileID: 4186212390177123877, guid: 990e7f83ae7cc2a4abc494e14b3b607c,
         type: 3}
