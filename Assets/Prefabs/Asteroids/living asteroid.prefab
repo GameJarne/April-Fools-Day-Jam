@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7725665562549413772}
   m_Layer: 7
   m_Name: Living Asteroid
-  m_TagString: Untagged
+  m_TagString: Living Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8626368473970663934}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7725665562549413772
 MonoBehaviour:
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 8270518043320170324}
   m_Layer: 0
   m_Name: graphics
-  m_TagString: Untagged
+  m_TagString: Living Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6048960123745361755}
   m_Layer: 7
   m_Name: holder
-  m_TagString: Untagged
+  m_TagString: Living Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1825,7 +1825,7 @@ Transform:
   - {fileID: 4186212389440665628}
   - {fileID: 4186212390567691945}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4186212390224277357
 GameObject:
@@ -1996,7 +1996,6 @@ GameObject:
   - component: {fileID: 4186212390567691945}
   - component: {fileID: 4186212390567691944}
   - component: {fileID: 4186212389299184555}
-  - component: {fileID: 4036015767607886934}
   - component: {fileID: 2413096669501567824}
   - component: {fileID: 8620843066812677922}
   - component: {fileID: 8186171372095739961}
@@ -2064,22 +2063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartTime: 3
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4036015767607886934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4186212390567692118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3f2a340d2e5d54da35730bb352f991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restartTime: 3
+  playerGraphics: {fileID: 4186212390829484791}
+  playerRagdollPrefab: {fileID: 2916946604603102889, guid: 8944abe192ae364458e2eecf7d63cf7d,
+    type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls: []
