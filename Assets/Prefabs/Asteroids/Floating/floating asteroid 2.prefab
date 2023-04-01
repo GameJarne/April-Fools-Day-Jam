@@ -96,3 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverAmount: 0.2
+  canTurnIntoLiving: 0
+  livingAsteroidPrefab: {fileID: 1828619859065729390, guid: a6bdf81ef9000df45970c684c079b839,
+    type: 3}

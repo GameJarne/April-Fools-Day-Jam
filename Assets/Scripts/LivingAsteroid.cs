@@ -19,7 +19,7 @@ public class LivingAsteroid : MonoBehaviour
     [SerializeField] private MeshFilter meshFilter;
 
     private Transform player; // The player's transform component
-    private Vector3 startingPosition; // The enemy's starting position
+    [HideInInspector] public Vector3 startingPosition; // The enemy's starting position
 
     private bool isFollowingPlayer = false;
 

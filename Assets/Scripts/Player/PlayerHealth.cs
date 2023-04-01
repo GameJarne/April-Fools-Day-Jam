@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+
     private IEnumerator RestartAfterTime()
     {
         yield return new WaitForSeconds(restartTime);
