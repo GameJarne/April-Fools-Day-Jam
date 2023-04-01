@@ -49,12 +49,13 @@ MonoBehaviour:
   startFollowingDistance: 5
   followDistance: 10
   hoverAmount: 0.1
-  idleHeight: 5
+  idleHeight: 1
   followHeight: 1
   avoidDistance: 5
   disguisedMesh: {fileID: -7445099610986950344, guid: cdd658590936f9e4cbff3adcad322227,
     type: 3}
   meshFilter: {fileID: 8557859977176207018}
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &3798872949917511091
 GameObject:
   m_ObjectHideFlags: 0
